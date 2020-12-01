@@ -1,16 +1,20 @@
+# We expect all three algorithms to be run before plotting
 import math
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Reading task logs
 tasks_ll = pd.read_csv("task_logLL.csv")
 tasks_rr = pd.read_csv("task_logRR.csv")
 tasks_random = pd.read_csv("task_logRANDOM.csv")
 
+# Reading job logs
 jobs_ll = pd.read_csv("job_logLL.csv")
 jobs_rr = pd.read_csv("job_logRR.csv")
 jobs_random = pd.read_csv("job_logRANDOM.csv")
 
+# Function to generate heatmaps for a particular algorithm
 def genHeatMap(tasks,title):
     max_time = tasks['Completion'].max()
     min_time = tasks['Completion'].min()
@@ -51,6 +55,7 @@ def genHeatMap(tasks,title):
     fig.tight_layout()
     plt.show()
 
+# Function to generate median and mode graphs for tasks
 def genTaskGraph():
     
     tasks_rr_mean = tasks_rr['ExecutionTime'].mean()
@@ -78,6 +83,7 @@ def genTaskGraph():
         plt.text(value, index, str(round(value,2)))
     plt.show()
 
+# Function to generate median and mode graphs for jobs
 def genJobGraph():
     jobs_rr_mean = jobs_rr['ExecutionTime'].mean()
     jobs_rr_median = jobs_rr['ExecutionTime'].median()
