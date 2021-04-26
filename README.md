@@ -40,6 +40,28 @@ consistency.
 
 ---
 
+Format of config.json :
+```json
+{
+	 "Workers": [ //one worker per machine
+	    {
+		      "worker_id": <worker_id>,
+		      "slots": <number of slots>, // number of slots in the machine
+		      "port": <port number> // port on which the Worker process listens for task launch messages
+	    },
+	    {
+		      ”worker_id": <worker_id>,
+		      "slots": <number of slots>,
+		      "port": <port number>
+	    },
+   	   …
+	]
+}
+
+```
+
+---
+
 ## Results and Visualizations
 The below heatmaps gives us the distribution of the tasks across the workers across time.
 ![Round Robin](Static/RoundRobin.PNG)
