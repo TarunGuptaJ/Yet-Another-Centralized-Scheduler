@@ -13,8 +13,13 @@ monitors the communication to keep the entirety in sync.
 
 ## Workflow
 **Master Workflow**
+
 ![Master Workflow](Static/Capture2.PNG)
+
+---
+
 **Worker Workflow**
+
 ![Worker Workflow](Static/Capture1.PNG)
 ---
 
